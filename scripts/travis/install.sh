@@ -27,6 +27,9 @@ if [[ ! -z $TOXENV ]]; then
   pip install setuptools==28.8.0 tox==2.4.1
 fi
 
+echo "Creating .bazelrc.local"
+pwd
+
 echo -e <<EOM >>.bazelrc.local
 # Set up caching on local disk so incremental builds are faster
 # See https://bazel.build/designs/2016/09/30/repository-cache.html
@@ -43,6 +46,8 @@ build --show_timestamps
 
 EOM
 
+ls -l .bazelrc.local
+cat .bazelrc.local
 
 curl -L -o bazelisk "https://github.com/bazelbuild/bazelisk/releases/download/v1.3.0/bazelisk-linux-amd64"
 chmod +x bazelisk && sudo mv bazelisk /usr/local/bin/bazel
