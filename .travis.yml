@@ -56,7 +56,7 @@ cache:
 
 matrix:
   include:
-    - env: BZL="build --profile=/tmp/bazelprofile //java/..."
+    - env: BZL="build --profile=/tmp/bazelprofile //java/client/..."
       <<: *java
 install: ./scripts/travis/install.sh
 before_script: ./scripts/travis/before_script.sh
