@@ -27,8 +27,7 @@ if [[ ! -z $TOXENV ]]; then
   pip install setuptools==28.8.0 tox==2.4.1
 fi
 
-echo "Current shell is"
-echo $0
+echo $SHELL
 
 echo -e <<EOM >>.bazelrc.local
 # Set up caching on local disk so incremental builds are faster
